@@ -1,5 +1,5 @@
 const getStoredJobApplication = () => {
-  const storedJobApplication = localStorage.getItem("job-applications");
+  const storedJobApplication = localStorage.getItem("jobApplications");
   if (storedJobApplication) {
     return JSON.parse(storedJobApplication);
   } else [];
@@ -11,10 +11,10 @@ const saveJobAplication = (id) => {
   if (!exist) {
     storedJobApplications.push(id);
     localStorage.setItem(
-      "job-applications",
+      "jobApplications",
       JSON.stringify(storedJobApplications)
     );
   }
 };
 
-export { saveJobAplication };
+export { getStoredJobApplication, saveJobAplication };
